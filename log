@@ -2,3 +2,9 @@ Thu, Mar 20, 2025  6:08:52 PM:
 ./test.sh: line 26: gcc: command not found
 Compilation failed
 3f6cb15
+Thu, Mar 20, 2025  6:09:16 PM: 
+ exercises.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+./test.sh: line 26: gcc: command not found
+Compilation failed
+3e0d908
