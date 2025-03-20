@@ -27,3 +27,16 @@ exercises.c:126:7: error: implicit declaration of function 'is_empty' [-Werror=i
 cc1.exe: all warnings being treated as errors
 Compilation failed
 613cb19
+Thu, Mar 20, 2025  7:16:36 PM: 
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:49:7: error: implicit declaration of function 'push_back' [-Werror=implicit-function-declaration]
+       push_back(L, elem);
+       ^~~~~~~~~
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:126:7: error: implicit declaration of function 'is_empty' [-Werror=implicit-function-declaration]
+    if(is_empty(P)) {
+       ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+9528da4
