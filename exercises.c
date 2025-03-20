@@ -76,7 +76,13 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-
+   int *dato = (int*)first(L);
+   while(dato != NULL) {
+      if(*dato == elem) {
+         popCurrent(L);
+      }
+      dato = (int*)next(L);
+   }
 }
 
 /*
@@ -87,6 +93,16 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+   Stack *aux = create_stack();
+   void *dato;
+   while((dato = pop(P1)) != NULL) {
+      push(aux, dato);
+   }
+   while((dato = pop(aux)) != NULL) {
+      push(P1, dato);
+      push(P2, dato);
+   }
+   free(aux);
 }
 
 /*
@@ -97,6 +113,20 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+   Stack *P = create_stack();
+   for(int i = 0; cadena[i] != '\0'; i++) {
+      if(cadena[i] == '(') {
+         push(P, &cadena[i]);
+      } else if(cadena[i] == ')') {
+         if(pop(P) == NULL) {
+            return 0;
+         }
+      }
+   }
+   if(is_empty(P)) {
+      return 1;
+   } else {
+      return 0;
+   }
 }
 
